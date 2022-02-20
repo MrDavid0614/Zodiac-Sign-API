@@ -3,7 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
-    const { day, month } = req.query
+    const { dia: day, mes: month } = req.query
 
     if (day && month) {
         return res.send({ signo: getZodiac(+day, +month) });
